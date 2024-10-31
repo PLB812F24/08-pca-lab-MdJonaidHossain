@@ -1,0 +1,155 @@
+---
+title: "PCAPlots_ECR"
+output: html_document
+date: "2024-10-30"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(ggplot2)
+```
+
+
+Code to make a single PCA plot is below. Please save your own version of this file and edit to make PCA plots for all the different PCA analyses generated in the original assignment.
+```{r}
+## read in PC data
+## CHANGE THESE PATHS TO YOUR OWN DATA
+mypcs <- read.table('path')
+
+##make some sensible names
+names(mypcs)[1:12] <- c('code','ID','PC1','PC2','PC3','PC4','PC5','PC6','PC7','PC8','PC9','PC10')
+
+## read in data about arabidopsis
+mydat <- read.table('~/plb812/genomic-data/accessions.csv', header=F, sep=",")
+#make some sensible names again
+names(mydat)[1] <- "ID"
+names(mydat)[11] <- "region"
+
+## join files together
+myall <- dplyr::left_join(mypcs, mydat, by="ID")
+
+## make a PC plot with PCs 1 and 2
+ggplot(myall, aes(x=PC1, y=PC2, color=region))+
+  geom_point()+
+  theme_minimal()
+
+##make a PC plot with PCs 3 and 4
+ggplot(myall, aes(x=PC3, y=PC4, color=region))+
+  geom_point()+
+  theme_minimal()
+```
+
+```{r}
+#Starting with the huge first eigenval file
+#completely unfiltered
+mypcs <- read.table('/mnt/home/rosseli5/08_PCA/arabidopsis-pca.eigenvec')
+
+##make some sensible names
+#Add proper headers
+names(mypcs)[1:12] <- c('code','ID','PC1','PC2','PC3','PC4','PC5','PC6','PC7','PC8','PC9','PC10')
+
+## read in data about arabidopsis
+mydat <- read.table('/mnt/research/PLB812_FS24_S001/12_PCA/accessions.csv', header=F, sep=",")
+#make some sensible names again
+names(mydat)[1] <- "ID"
+names(mydat)[11] <- "region"
+
+## join files together
+myall <- dplyr::left_join(mypcs, mydat, by="ID")
+
+## make a PC plot with PCs 1 and 2
+ggplot(myall, aes(x=PC1, y=PC2, color=region))+
+  geom_point()+
+  theme_minimal()
+
+##make a PC plot with PCs 3 and 4
+ggplot(myall, aes(x=PC3, y=PC4, color=region))+
+  geom_point()+
+  theme_minimal()
+
+```
+
+``````{r}
+#100 SNPS
+mypcs100 <- read.table('/mnt/home/rosseli5/08_PCA/arabidopsis100-pca.eigenvec')
+
+##make some sensible names
+#Add proper headers
+names(mypcs100)[1:12] <- c('code','ID','PC1','PC2','PC3','PC4','PC5','PC6','PC7','PC8','PC9','PC10')
+
+## read in data about arabidopsis
+mydat <- read.table('/mnt/research/PLB812_FS24_S001/12_PCA/accessions.csv', header=F, sep=",")
+#make some sensible names again
+names(mydat)[1] <- "ID"
+names(mydat)[11] <- "region"
+
+## join files together
+myall100 <- dplyr::left_join(mypcs100, mydat, by="ID")
+
+## make a PC plot with PCs 1 and 2
+ggplot(myall100, aes(x=PC1, y=PC2, color=region))+
+  geom_point()+
+  theme_minimal()
+
+##make a PC plot with PCs 3 and 4
+ggplot(myall100, aes(x=PC3, y=PC4, color=region))+
+  geom_point()+
+  theme_minimal()
+```
+
+``````{r}
+#100 SNPS
+mypcs1000 <- read.table('/mnt/home/rosseli5/08_PCA/arabidopsis1000-pca.eigenvec')
+
+##make some sensible names
+#Add proper headers
+names(mypcs1000)[1:12] <- c('code','ID','PC1','PC2','PC3','PC4','PC5','PC6','PC7','PC8','PC9','PC10')
+
+## read in data about arabidopsis
+mydat <- read.table('/mnt/research/PLB812_FS24_S001/12_PCA/accessions.csv', header=F, sep=",")
+#make some sensible names again
+names(mydat)[1] <- "ID"
+names(mydat)[11] <- "region"
+
+## join files together
+myall1000 <- dplyr::left_join(mypcs1000, mydat, by="ID")
+
+## make a PC plot with PCs 1 and 2
+ggplot(myall1000, aes(x=PC1, y=PC2, color=region))+
+  geom_point()+
+  theme_minimal()
+
+##make a PC plot with PCs 3 and 4
+ggplot(myall1000, aes(x=PC3, y=PC4, color=region))+
+  geom_point()+
+  theme_minimal()
+```
+
+``````{r}
+#100 SNPS
+mypcs10000 <- read.table('/mnt/home/rosseli5/08_PCA/arabidopsis10000-pca.eigenvec')
+
+##make some sensible names
+#Add proper headers
+names(mypcs10000)[1:12] <- c('code','ID','PC1','PC2','PC3','PC4','PC5','PC6','PC7','PC8','PC9','PC10')
+
+## read in data about arabidopsis
+mydat <- read.table('/mnt/research/PLB812_FS24_S001/12_PCA/accessions.csv', header=F, sep=",")
+#make some sensible names again
+names(mydat)[1] <- "ID"
+names(mydat)[11] <- "region"
+
+## join files together
+myall10000 <- dplyr::left_join(mypcs10000, mydat, by="ID")
+
+## make a PC plot with PCs 1 and 2
+ggplot(myall10000, aes(x=PC1, y=PC2, color=region))+
+  geom_point()+
+  theme_minimal()
+
+##make a PC plot with PCs 3 and 4
+ggplot(myall10000, aes(x=PC3, y=PC4, color=region))+
+  geom_point()+
+  theme_minimal()
+```

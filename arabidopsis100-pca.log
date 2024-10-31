@@ -1,0 +1,30 @@
+PLINK v2.00a3.7 SSE4.2 (24 Oct 2022)
+Options in effect:
+  --allow-extra-chr
+  --bfile /mnt/research/PLB812_FS24_S001/12_PCA/arabidopsis
+  --extract /mnt/home/jonaid/pca/arabidopsis.100.in
+  --out /mnt/home/jonaid/pca/arabidopsis100-pca
+  --pca
+
+Hostname: dev-amd20-v100
+Working directory: /mnt/ufs18/home-051/jonaid/pca
+Start time: Wed Oct 30 22:54:30 2024
+
+Random number seed: 1730343270
+191819 MiB RAM detected; reserving 95909 MiB for main workspace.
+Using up to 48 threads (change this with --threads).
+1135 samples (0 females, 0 males, 1135 ambiguous; 1135 founders) loaded from
+/mnt/research/PLB812_FS24_S001/12_PCA/arabidopsis.fam.
+456429 variants loaded from
+/mnt/research/PLB812_FS24_S001/12_PCA/arabidopsis.bim.
+Note: No phenotype data present.
+--extract: 100 variants remaining.
+Calculating allele frequencies... done.
+100 variants remaining after main filters.
+Constructing GRM: done.
+Correcting for missingness... done.
+Extracting eigenvalues and eigenvectors... done.
+--pca: Eigenvectors written to /mnt/home/jonaid/pca/arabidopsis100-pca.eigenvec
+, and eigenvalues written to /mnt/home/jonaid/pca/arabidopsis100-pca.eigenval .
+
+End time: Wed Oct 30 22:54:39 2024
